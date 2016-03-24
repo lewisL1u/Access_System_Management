@@ -2,3 +2,4 @@
 # Team Name: Red Dragon
 # Team Member: Lewis Liu, Su Wang, David Kim
 # MySQL username: root pwd:RedDragon
+# modified by Su
