@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72AB8A97-D5D5-49A7-AB6F-8A5108937067}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Authy</RootNamespace>
+    <AssemblyName>Authy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\docs.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Help.aspx" />
+    <Content Include="Images\authGroup1.png" />
+    <Content Include="Images\authGroup10.png" />
+    <Content Include="Images\authGroup11.png" />
+    <Content Include="Images\authGroup2.png" />
+    <Content Include="Images\authGroup3.png" />
+    <Content Include="Images\authGroup4.png" />
+    <Content Include="Images\authGroup5.png" />
+    <Content Include="Images\authGroup6.png" />
+    <Content Include="Images\authGroup7.png" />
+    <Content Include="Images\authGroup8.png" />
+    <Content Include="Images\authGroup9.png" />
+    <Content Include="Images\CreateEmployees1.png" />
+    <Content Include="Images\CreateEmployees2.png" />
+    <Content Include="Images\createRole.png" />
+    <Content Include="Images\createUser.png" />
+    <Content Include="Images\createUser1.png" />
+    <Content Include="Images\EditEmployees1.png" />
+    <Content Include="Images\editUser.png" />
+    <Content Include="Images\editUser1.png" />
+    <Content Include="Images\EmployeeReports1.png" />
+    <Content Include="Images\ManageAuthorizations1.png" />
+    <Content Include="Images\ManageAuthorizations2.png" />
+    <Content Include="Images\ManageAuthorizations3.png" />
+    <Content Include="Images\manageRequests1.png" />
+    <Content Include="Images\manageRequests2.png" />
+    <Content Include="Images\ModifyEmployee.png" />
+    <Content Include="Images\OECU-circle-sm.ico" />
+    <Content Include="Images\OECU-circle-sm.png" />
+    <Content Include="Images\OECU-logo.png" />
+    <Content Include="Images\OECU-SARHelper.png" />
+    <Content Include="Images\Page_Under_Construction.jpg" />
+    <Content Include="Images\please_wait.gif" />
+    <Content Include="Images\processing.gif" />
+    <Content Include="Images\sar_help1.png" />
+    <Content Include="Images\sar_help10.png" />
+    <Content Include="Images\sar_help11.png" />
+    <Content Include="Images\sar_help2.png" />
+    <Content Include="Images\sar_help3.png" />
+    <Content Include="Images\sar_help4.png" />
+    <Content Include="Images\sar_help5.png" />
+    <Content Include="Images\sar_help6.png" />
+    <Content Include="Images\sar_help7.png" />
+    <Content Include="Images\sar_help8.png" />
+    <Content Include="Images\sar_help9.png" />
+    <Content Include="Images\ViewRequests1.png" />
+    <Content Include="Notification\RequestNotificationEmailTemplate.html" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Authy.cd" />
+    <None Include="Properties\PublishProfiles\Authy.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="AuthorizationGroups.aspx" />
+    <Content Include="AuthorizationReports.aspx" />
+    <Content Include="Authorizations.aspx" />
+    <Content Include="ETR.aspx" />
+    <Content Include="EmployeeReports.aspx" />
+    <Content Include="Pages\SAR.aspx" />
+    <Content Include="RequestDetails.aspx" />
+    <Content Include="RequestExecutive.aspx" />
+    <Content Include="RequestIT.aspx" />
+    <Content Include="ResultPage.aspx" />
+    <Content Include="Scripts\docs.min.js" />
+    <Content Include="SRR.aspx" />
+    <Content Include="SAR.aspx" />
+    <Content Include="EmployeeGroups.aspx" />
+    <Content Include="Employees.aspx" />
+    <Content Include="ManageRequests.aspx" />
+    <Content Include="Roles.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="UserControl\PermissionsUC.ascx" />
+    <Content Include="UserControl\RequestInforUC.ascx" />
+    <Content Include="UserControl\SelectAuthorizationsUC.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserControl\SelectEmployeesUC.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ViewRequests.aspx" />
+    <Content Include="Unauthorized.aspx" />
+    <Content Include="Users.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web References\EmailService\EmailModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\EmailService\EmailService.disco" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web References\EmailService\EmailService.wsdl" />
+    <None Include="Web References\EmailService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\EmailNotification.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\RequestHandler.cs" />
+    <Compile Include="Migrations\201603291607320_updateWorkFlow.cs" />
+    <Compile Include="Migrations\201603291607320_updateWorkFlow.Designer.cs">
+      <DependentUpon>201603291607320_updateWorkFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603292046562_updateWorkFlow1.cs" />
+    <Compile Include="Migrations\201603292046562_updateWorkFlow1.Designer.cs">
+      <DependentUpon>201603292046562_updateWorkFlow1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604011708423_ModifyWorkFlowProcess.cs" />
+    <Compile Include="Migrations\201604011708423_ModifyWorkFlowProcess.Designer.cs">
+      <DependentUpon>201604011708423_ModifyWorkFlowProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604011722172_recoverRqeust.cs" />
+    <Compile Include="Migrations\201604011722172_recoverRqeust.Designer.cs">
+      <DependentUpon>201604011722172_recoverRqeust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604011745301_upateWorkFlowHandler.cs" />
+    <Compile Include="Migrations\201604011745301_upateWorkFlowHandler.Designer.cs">
+      <DependentUpon>201604011745301_upateWorkFlowHandler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604011911470_upateWorkFlowHandler1.cs" />
+    <Compile Include="Migrations\201604011911470_upateWorkFlowHandler1.Designer.cs">
+      <DependentUpon>201604011911470_upateWorkFlowHandler1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Authy_WorkFlow_Handler.cs" />
+    <Compile Include="Models\Authy_Access.cs" />
+    <Compile Include="Models\Authy_Branch.cs" />
+    <Compile Include="Models\Authy_EmployeeGroup.cs" />
+    <Compile Include="Models\Authy_Request.cs" />
+    <Compile Include="Models\Authy_RequestType.cs" />
+    <Compile Include="Models\Authy_Role.cs" />
+    <Compile Include="Models\Authy_Authorization.cs" />
+    <Compile Include="Models\Authy_DatabaseInitializer.cs" />
+    <Compile Include="Models\Authy_DataContext.cs" />
+    <Compile Include="Models\Authy_Employee.cs" />
+    <Compile Include="Models\Authy_AuthorizationGroup.cs" />
+    <Compile Include="Models\Authy_User.cs" />
+    <Compile Include="AuthorizationGroups.aspx.cs">
+      <DependentUpon>AuthorizationGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationGroups.aspx.designer.cs">
+      <DependentUpon>AuthorizationGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationReports.aspx.cs">
+      <DependentUpon>AuthorizationReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizationReports.aspx.designer.cs">
+      <DependentUpon>AuthorizationReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authorizations.aspx.cs">
+      <DependentUpon>Authorizations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authorizations.aspx.designer.cs">
+      <DependentUpon>Authorizations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ETR.aspx.cs">
+      <DependentUpon>ETR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ETR.aspx.designer.cs">
+      <DependentUpon>ETR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeReports.aspx.cs">
+      <DependentUpon>EmployeeReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeReports.aspx.designer.cs">
+      <DependentUpon>EmployeeReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Authy_Workflow.cs" />
+    <Compile Include="Models\Authy_WorkFlow_Requester.cs" />
+    <Compile Include="Models\RequestTypeEnum.cs" />
+    <Compile Include="Pages\SAR.aspx.cs">
+      <DependentUpon>SAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SAR.aspx.designer.cs">
+      <DependentUpon>SAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RequestDetails.aspx.cs">
+      <DependentUpon>RequestDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestDetails.aspx.designer.cs">
+      <DependentUpon>RequestDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestExecutive.aspx.cs">
+      <DependentUpon>RequestExecutive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestExecutive.aspx.designer.cs">
+      <DependentUpon>RequestExecutive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestIT.aspx.cs">
+      <DependentUpon>RequestIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestIT.aspx.designer.cs">
+      <DependentUpon>RequestIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultPage.aspx.cs">
+      <DependentUpon>ResultPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultPage.aspx.designer.cs">
+      <DependentUpon>ResultPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SRR.aspx.cs">
+      <DependentUpon>SRR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SRR.aspx.designer.cs">
+      <DependentUpon>SRR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAR.aspx.cs">
+      <DependentUpon>SAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAR.aspx.designer.cs">
+      <DependentUpon>SAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeGroups.aspx.cs">
+      <DependentUpon>EmployeeGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeGroups.aspx.designer.cs">
+      <DependentUpon>EmployeeGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageRequests.aspx.cs">
+      <DependentUpon>ManageRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageRequests.aspx.designer.cs">
+      <DependentUpon>ManageRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PermissionsUC.ascx.cs">
+      <DependentUpon>PermissionsUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PermissionsUC.ascx.designer.cs">
+      <DependentUpon>PermissionsUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RequestInforUC.ascx.cs">
+      <DependentUpon>RequestInforUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RequestInforUC.ascx.designer.cs">
+      <DependentUpon>RequestInforUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SelectAuthorizationsUC.ascx.cs">
+      <DependentUpon>SelectAuthorizationsUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControl\SelectAuthorizationsUC.ascx.designer.cs">
+      <DependentUpon>SelectAuthorizationsUC.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControl\SelectEmployeesUC.ascx.cs">
+      <DependentUpon>SelectEmployeesUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControl\SelectEmployeesUC.ascx.designer.cs">
+      <DependentUpon>SelectEmployeesUC.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ViewRequests.aspx.cs">
+      <DependentUpon>ViewRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewRequests.aspx.designer.cs">
+      <DependentUpon>ViewRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unauthorized.aspx.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unauthorized.aspx.designer.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\EmailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://oecu-rg2/WebServices/EmailService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EmailService\</RelPath>
+      <UpdateFromURL>http://oecu-rg2/WebServices/EmailService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Authy_EmailService_EmailService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603291607320_updateWorkFlow.resx">
+      <DependentUpon>201603291607320_updateWorkFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603292046562_updateWorkFlow1.resx">
+      <DependentUpon>201603292046562_updateWorkFlow1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604011708423_ModifyWorkFlowProcess.resx">
+      <DependentUpon>201604011708423_ModifyWorkFlowProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604011722172_recoverRqeust.resx">
+      <DependentUpon>201604011722172_recoverRqeust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604011745301_upateWorkFlowHandler.resx">
+      <DependentUpon>201604011745301_upateWorkFlowHandler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604011911470_upateWorkFlowHandler1.resx">
+      <DependentUpon>201604011911470_upateWorkFlowHandler1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55747</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55382/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
